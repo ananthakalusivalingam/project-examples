@@ -1,6 +1,13 @@
-name: "JFrog CLI Example"
-on: push
-     workflow_dispatch:
+name: "Login to GCP Jfrog Instance"
+on: 
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log level'     
+        required: true
+        default: 'warning'
+      tags:
+        description: 'Test scenario tags'  
 jobs:
   build:
     runs-on: ubuntu-latest
